@@ -1,12 +1,14 @@
 (function ( $ ) {
 	$.fn.tableSort = function ( options ) {
 		options = $.extend({
-			sortRule: []
+			sortRule   : [],
+			defaultRule: 'word'
 		}, options);
 
 		var make = function () {
-			var self = $(this),
-			    rule = options.sortRule,
+			var self        = $(this),
+			    rule        = options.sortRule,
+			    defaultRule = options.defaultRule,
 			    first_line;
 
 			// Сортировка как числа
@@ -104,6 +106,9 @@
 				if( rule[i] === 'digit' ) {
 					table_dom.sort(sortDigit);
 
+				} else if( rule[i] === 'word' ) {
+					table_dom.sort(sortWord);
+
 				} else if( rule[i] === 'digiword' ) {
 					table_dom.sort(sortDigiWord);
 
@@ -111,7 +116,20 @@
 					console.log('Сложное правило');
 
 				} else {
-					table_dom.sort(sortWord);
+
+					switch ( defaultRule ) {
+						case 'digit':
+							table_dom.sort(sortDigit);
+							break;
+
+						case 'word':
+							table_dom.sort(sortWord);
+							break;
+
+						case 'digiword':
+							table_dom.sort(sortDigiWord);
+							break;
+					}
 				}
 
 

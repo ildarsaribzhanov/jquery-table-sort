@@ -63,6 +63,43 @@
 				return 0;
 			}
 
+			// Сортировка по своему правилу
+			function sortCustom( arr, ruleArray ) {
+				var res = [],
+				    key;
+
+				for ( var i = 0; i < ruleArray.length; i++ ) {
+					var sortArrDigit = [];
+
+					// Если тут цифры
+					if( ruleArray[i] === 'digit' ) {
+						for ( key in arr ) {
+
+							if( !isNaN(parseFloat(arr[key].val)) ) {
+								sortArrDigit.push(arr[key]);
+							}
+						}
+
+						sortArrDigit.sort(sortDigit);
+
+						for ( key in sortArrDigit ) {
+							res.push(sortArrDigit[key]);
+						}
+					}
+
+
+					// Все остальное
+					for ( key in arr ) {
+
+						if( arr[key].val === ruleArray[i] ) {
+							res.push(arr[key]);
+						}
+					}
+				}
+
+				return res;
+			}
+
 			var is_first = true;
 
 			// Обработка сортировки на клик
@@ -113,7 +150,7 @@
 					table_dom.sort(sortDigiWord);
 
 				} else if( Array.isArray(rule[i]) ) {
-					console.log('Сложное правило');
+					table_dom = sortCustom(table_dom, rule[i]);
 
 				} else {
 
@@ -136,11 +173,6 @@
 				if( order < 0 ) {
 					table_dom.reverse();
 				}
-
-
-				// for ( key in table_dom ) {
-				// 	console.log(table_dom[key].val);
-				// }
 
 				// Пересоберем таблицу
 				self.html(first_line);

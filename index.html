@@ -3,11 +3,12 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Начало</title>
-
+	
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
-
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="./js/src/jquery.tableSort.js"></script>
+
 </head>
 
 <body>
@@ -15,24 +16,53 @@
 	
 	<!--band begin-->
 	<div class="band">
-
-	<table>
-		<tr>
-			<th>Слова</th>
-			<th>цифры</th>
-			<th>важные цифры</th>
-			<th>еще слова</th>
-		</tr>
-		<tr>
-			<td>Привет</td>
-			<td>90</td>
-			<td></td>
-			<td></td>
-		</tr>
-	</table>
-
+		
+		<table class="table js-table-sort">
+			<tr>
+				<th></th>
+				<th class="">Слова</th>
+				<th>цифры</th>
+				<th>важные цифры</th>
+				<th>еще слова</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>Язь</td>
+				<td>90</td>
+				<td>20</td>
+				<td>арбуз</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>Муха</td>
+				<td>5</td>
+				<td>1</td>
+				<td>Вася</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>Каска</td>
+				<td>10</td>
+				<td>dns</td>
+				<td>баржа</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>Иврит</td>
+				<td>1</td>
+				<td>dnа</td>
+				<td>ёж</td>
+			</tr>
+		</table>
+	
 	</div>
 </div>
+
+<script>
+	$('.js-table-sort').tableSort({
+		sortRule: [null, 'word', 'digit', 'digit', 'word']
+	});
+</script>
 
 </body>
 </html>

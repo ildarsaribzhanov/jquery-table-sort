@@ -38,7 +38,8 @@
 			// Обработка сортировки на клик
 			self.on('click', 'th', function () {
 
-				var i = $(this).index();
+				var i     = $(this).index(),
+				    order = 1;
 
 				if( rule[i] === null ) {
 					return false;
@@ -48,6 +49,7 @@
 
 				if( $(this).hasClass('asc') ) {
 					$(this).removeClass('asc').addClass('desc');
+					order = -1;
 				} else {
 					$(this).removeClass('desc').addClass('asc');
 				}
@@ -84,13 +86,17 @@
 						break;
 				}
 
+				if( order < 0 ) {
+					table_dom.reverse();
+				}
+
 
 				// for ( key in table_dom ) {
 				// 	console.log(table_dom[key].val);
 				// }
 
 				// Пересоберем таблицу
-				self.html(first_line);
+					self.html(first_line);
 				for ( var key in table_dom ) {
 					self.append(table_dom[key].html);
 				}

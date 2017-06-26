@@ -1,0 +1,137 @@
+/* CSS Document */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, input, textarea {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html, body {
+  height: 100%;
+  color: #000;
+}
+
+body, input, textarea {
+  font-family: Arial;
+}
+
+a {
+  color: #000;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  border: 0;
+}
+
+/*
+	// use
+	.my-box {
+		padding: 10px;
+
+		@include for-desktop-up {
+			padding: 20px;
+		}
+	}
+*/
+.title {
+  font-family: Arial;
+  font-size: 2em;
+  color: #000;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+}
+
+.band {
+  width: 960px;
+  min-height: 400px;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+
+/* header begin */
+.header {
+  width: 100%;
+  height: 250px;
+  position: relative;
+  border: 1px solid black;
+}
+
+.header__logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  border: 1px dotted black;
+}
+
+/* menu begin */
+.menu {
+  position: absolute;
+  top: 20px;
+  left: 300px;
+  border: 1px dotted black;
+}
+
+.menu ul {
+  overflow: hidden;
+  list-style: none;
+}
+
+.menu li {
+  float: left;
+  padding: 0 30px 0;
+}
+
+/* main begin */
+.main-content {
+  min-height: 100px;
+  border: 1px solid blue;
+  overflow: hidden;
+}
+
+.sidebar_left {
+  width: 700px;
+  min-height: 200px;
+  float: left;
+  border: 1px dotted black;
+}
+
+.sidebar_right {
+  min-height: 200px;
+  margin: 0 0 0 750px;
+  border: 1px dotted red;
+}
+
+.clear {
+  height: 100px;
+  clear: both;
+}
+
+/* footer begin */
+.footer {
+  width: 960px;
+  height: 100px;
+  position: relative;
+  margin: -100px auto 0;
+  color: #000;
+  outline: 1px solid #000;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -38,22 +38,6 @@ img {
   border: 0;
 }
 
-/*
-	// use
-	.my-box {
-		padding: 10px;
-
-		@include for-desktop-up {
-			padding: 20px;
-		}
-	}
-*/
-.title {
-  font-family: Arial;
-  font-size: 2em;
-  color: #000;
-}
-
 .wrapper {
   width: 100%;
   min-height: 100%;
@@ -80,21 +64,6 @@ img {
 .table th {
   cursor: pointer;
   background-color: #fafafa;
-}
-
-.clear {
-  height: 100px;
-  clear: both;
-}
-
-/* footer begin */
-.footer {
-  width: 960px;
-  height: 100px;
-  position: relative;
-  margin: -100px auto 0;
-  color: #000;
-  outline: 1px solid #000;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -27,8 +27,32 @@
 
 			// Сортировка как строки
 			function sortWord( a, b ) {
-				var int_a = a.val.toLowerCase(),
-				    int_b = b.val.toLowerCase();
+				var str_a = a.val.toLowerCase(),
+				    str_b = b.val.toLowerCase();
+
+				if( str_a > str_b ) return 1;
+
+				if( str_a < str_b ) return -1;
+
+				return 0;
+			}
+
+			// Сортировка как строки
+			function sortDigiWord( a, b ) {
+				var int_a = parseFloat(a.val),
+				    int_b = parseFloat(b.val);
+
+				if( isNaN(int_a) && isNaN(int_b) ) {
+					return sortWord(a, b);
+				}
+
+				if( isNaN(int_a) && !isNaN(int_b) ) {
+					return 1;
+				}
+
+				if( !isNaN(int_a) && isNaN(int_b) ) {
+					return -1;
+				}
 
 				if( int_a > int_b ) return 1;
 
@@ -79,6 +103,9 @@
 				// Обработка правила сортировки
 				if( rule[i] === 'digit' ) {
 					table_dom.sort(sortDigit);
+
+				} else if( rule[i] === 'digiword' ) {
+					table_dom.sort(sortDigiWord);
 
 				} else if( Array.isArray(rule[i]) ) {
 					console.log('Сложное правило');

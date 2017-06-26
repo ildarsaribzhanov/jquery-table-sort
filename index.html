@@ -29,28 +29,42 @@
 				<td>1</td>
 				<td>Язь</td>
 				<td>90</td>
-				<td>20</td>
+				<td>10</td>
 				<td>арбуз</td>
 			</tr>
 			<tr>
 				<td>2</td>
 				<td>Муха</td>
-				<td>5</td>
+				<td></td>
 				<td>1</td>
 				<td>Вася</td>
 			</tr>
 			<tr>
 				<td>3</td>
+				<td>Лость</td>
+				<td>5</td>
+				<td>2</td>
+				<td>Ярослав</td>
+			</tr>
+			<tr>
+				<td>4</td>
 				<td>Каска</td>
 				<td>10</td>
 				<td>dns</td>
 				<td>баржа</td>
 			</tr>
 			<tr>
-				<td>4</td>
+				<td>5</td>
 				<td>Иврит</td>
 				<td>1</td>
-				<td>dnа</td>
+				<td>dnf</td>
+				<td>ёж</td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td>Иврит</td>
+				<td></td>
+				<td>dnf</td>
 				<td>ёж</td>
 			</tr>
 		</table>
@@ -60,7 +74,7 @@
 
 <script>
 	$('.js-table-sort').tableSort({
-		sortRule: [null, 'word', 'digit', 'digit', 'word']
+		sortRule: [null, 'word', 'digit', ['digit', 'dnf', 'dns'], 'word']
 	});
 </script>
 

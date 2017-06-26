@@ -14,6 +14,10 @@
 				var int_a = parseFloat(a.val),
 				    int_b = parseFloat(b.val);
 
+				if( isNaN(int_a) ) {
+					return 1;
+				}
+
 				if( int_a > int_b ) return 1;
 
 				if( int_a < int_b ) return -1;
@@ -72,19 +76,17 @@
 
 				is_first = true;
 
-				switch ( rule[i] ) {
-					case 'digit':
-						table_dom.sort(sortDigit);
-						break;
+				// Обработка правила сортировки
+				if( rule[i] === 'digit' ) {
+					table_dom.sort(sortDigit);
 
-					case 'word':
-						table_dom.sort(sortWord);
-						break;
+				} else if( Array.isArray(rule[i]) ) {
+					console.log('Сложное правило');
 
-					default:
-						table_dom.sort(sortWord);
-						break;
+				} else {
+					table_dom.sort(sortWord);
 				}
+
 
 				if( order < 0 ) {
 					table_dom.reverse();
@@ -96,7 +98,7 @@
 				// }
 
 				// Пересоберем таблицу
-					self.html(first_line);
+				self.html(first_line);
 				for ( var key in table_dom ) {
 					self.append(table_dom[key].html);
 				}

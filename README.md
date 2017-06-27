@@ -11,5 +11,5 @@ $('.js-table-sort').tableSort({
 * **null** - no sortable column
 * **digit** - sort column as numbers
 * **word** - sort column as strings
-* **digiword** - sort column as digits + strings. Digits is first
+* **digiword** - sort column as numbers + strings. Digits is first
 * **[array]** - custom rule
